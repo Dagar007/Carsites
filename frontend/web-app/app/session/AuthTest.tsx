@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import { UpdateAuctionTest } from '../actions/auctionActions';
+import { updateAuctionTest } from '../actions/auctionActions';
 import { Button } from 'flowbite-react';
 
 
@@ -11,7 +11,7 @@ export default function AuthTest() {
     function doUpdate() {
         setResult(undefined);
         setLoading(true);
-        UpdateAuctionTest().then(res => setResult(res)).finally(() => setLoading(false))
+        updateAuctionTest().then(res => setResult(res)).finally(() => setLoading(false))
     }
   return (
     <div className='flex items-center gap-4'>
