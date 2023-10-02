@@ -21,17 +21,7 @@ export default function Search() {
   return (
     <div className='flex w-[50%] items-center border-2 rounded-full py-2 shadow-sm'>
         <input 
-            className='
-                flex-grow
-                pl-5
-                bg-transparent
-                focus:outline-none
-                border-transparent
-                focus:border-transparent
-                focus:ring-0
-                text-sm
-                text-gray-600
-            '
+            className='input-custom text-sm text-gray-600'
             value = {searchValue}
             type="text" 
             placeholder='Search for cars by make model or color' 
