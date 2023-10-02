@@ -1,6 +1,7 @@
 import { Auction, AuctionFinished } from "@/types"
 import Image from "next/image"
 import Link from "next/link"
+import { numberWithCommas } from "../util/numberWithComma"
 
 type Props = {
     finsishedAuction: AuctionFinished
@@ -18,11 +19,14 @@ export default function AuctionFinishedToast({auction, finsishedAuction}: Props)
                 width={80}
                 className='rounded-lg w-auto h-auto' />
 
-                <div className="flex flex-col">
-                  <span>Auction for {auction.make} {auction.model} has been finished</span>
-                  {finsishedAuction.itemSold && finsishedAuction.amount ? (
-                    <p>Congrats to {finsishedAuction.winner} who has won this auction for $${finsishedAuction.amount}</p>
-                  ): (<p>This item didn't sell.</p>)}
+                <div className='flex flex-col'>
+                    <span>Auction for {auction.make} {auction.model} has finished</span>
+                    {finsishedAuction.itemSold && finsishedAuction.amount ? (
+                        <p>Congrats to {finsishedAuction.winner} who has won this auction for 
+                            $${numberWithCommas(finsishedAuction.amount)}</p>
+                    ) : (
+                        <p>This item did not sell</p>
+                    )}
                 </div>
         </div>
     </Link>
