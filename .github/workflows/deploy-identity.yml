@@ -24,5 +24,5 @@ jobs:
         context: .
         file: src/IdentityService/Dockerfile
         push: true
-        tags: Dagar007/identity-svc:latest
+        tags: dagardeepak88/identity-svc:latest
 
